@@ -192,6 +192,7 @@ int IridiumSBD::getSystemTime(struct tm &tm) {
     unsigned long ticks_since_epoch = strtoul(msstmResponseBuf, NULL, 16);
     diagprint(F("ticks_since_epoch:\t\n"));
     diagprint(ticks_since_epoch);
+    diagprint(F("\n"));
 
     /* Strategy: we'll convert to seconds by finding the largest number of
        integral seconds less than the equivalent ticks_since_epoch. Subtract
