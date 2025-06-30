@@ -208,6 +208,9 @@ int IridiumSBD::getSystemTime(struct tm &tm) {
 
     time_t epoch_time = mktime(&epoch_start);
     time_t now = epoch_time + secs_since_epoch;
+    diagprint(F("now:\t\n"));
+    diagprint(now);
+    diagprint(F("\n"));
     memcpy(&tm, localtime(&now), sizeof tm);
     return ISBD_SUCCESS;
 }
